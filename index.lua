@@ -822,12 +822,6 @@ while System.mainLoop() do
 			if batterylevel>=3 and batterylevel<4 then BatteryColor = yellow end
 			if batterylevel>=0 and batterylevel<3 then BatteryColor = red end
 		end
-		elseif state=="THEEND" then
-		Graphics.initBlend(TOP_SCREEN)
-		gpu_drawtext(0,0,"CONGRATULATIONS    YOU    BECAME",white)
-		gpu_drawtext(0,25,"A    BILLIONAIRE",white)
-		gpu_drawtext(0,50,"THANKS    FOR    PLAYING",white)
-		gpu_drawtext(0,218,"PRESS    A    TO    END    GAME",white)
 		if Controls.check(pad,KEY_A) and Controls.check(oldpad,KEY_A) then 
 			save()
 			Cookie=nil
