@@ -829,11 +829,12 @@ while System.mainLoop() do
 			state="MENU"
 		end
 		Graphics.termBlend()
-		elseif state=="LOADING" then
+		if state=="LOADING" then
 		Graphics.initBlend(TOP_SCREEN)
 		Graphics.drawImage(0, 0, titlecreckeryop)
 		Graphics.fillRect(0,400,0,240,Color.new(0,0,0,rota))
 		screenshotmake()
+		end
 		Graphics.termBlend()
 		if rota>0 and rotanum==0 then
 			rota=rota-5
@@ -864,12 +865,13 @@ while System.mainLoop() do
 			bgm = nil
 			
 		end 
-		elseif state=="MENU" then
+		if state=="MENU" then
 		Graphics.initBlend(TOP_SCREEN)
 		cookieshowery=cookieshowery+2
 		Graphics.drawImage(backx, backy, BackgroundTop1)
 		Graphics.drawImage(0, cookieshowery-512, cookieshower)
 		Graphics.drawImage(0, cookieshowery, cookieshower)
+		end
 		if cookieshowery>512 then cookieshowery=0 end 
 		Graphics.drawImage(0, 0, menugradient)
 		Graphics.drawImage(0, 0, menutitle)
@@ -913,12 +915,13 @@ while System.mainLoop() do
 			continue()
 			state="GAME"
 		end	
-		elseif state=="OPTIONS" then
+		if state=="OPTIONS" then
 		Graphics.initBlend(TOP_SCREEN)
 		cookieshowery=cookieshowery+2
 		Graphics.drawImage(backx, backy, BackgroundTop1)
 		Graphics.drawImage(0, cookieshowery-512, cookieshower)
 		Graphics.drawImage(0, cookieshowery, cookieshower)
+		end
 		if cookieshowery>512 then cookieshowery=0 end
 		Graphics.drawImage(0, 0, menugradient)
 		Graphics.drawImage(0, 0, controls)
